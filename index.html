@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" ng-app="productsListModule">
+   <head>
+      <meta charset="utf-8">
+      <meta name="description" content="Lowe's Assessment">
+      <title>Ashok Gorantla - Interview Test</title>
+      <link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
+      <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+      <link rel="stylesheet" href="assets/css/products.css">
+   </head>
+   <body ng-controller="ProductListCtrl as productsListCtrl">
+      <div class="container mainContainer">
+         <div class="well heroContainer">
+            <div class="row">
+               <div class="col-sm-4">
+                  <img class="img" src="{{productsListCtrl.selectedProduct.imageUrls.lg}}">
+               </div>
+               <div class="col-sm-4">
+                  <h2 class="font-weight-bold">{{productsListCtrl.selectedProduct.brand}}</h2>
+                  <ul class='heroContainer-bulletList'>
+                     <li>{{productsListCtrl.selectedProduct.description}}</li>
+                     <li>{{productsListCtrl.selectedProduct.disclaimer}}</li>
+                  </ul>
+               </div>
+               <div class="col-sm-4">
+                  <h2>{{productsListCtrl.selectedProduct.networkPrice | currency}}</h2>
+                  <button class="btn btn-success btn-block" ng-click="productsListCtrl.displayPrice()">Add To Cart</button>
+               </div>
+            </div>
+         </div>
+         <div class="row u-marginTop20">
+            <div class="col-xs-12 col-md-3" ng-repeat="product in productsListCtrl.productsList" ng-mouseover="productsListCtrl.selectedProduct = product">
+               <div class="panel productPanel">
+                  <div class="panel-body">
+                     <div class="row">
+                        <div class="col-md-12 col-xs-4 text-center">
+                           <img class="img" src="{{product.imageUrls.sm}}">
+                        </div>
+                        <div class="col-md-12 col-xs-8">
+                           <h2>{{product.brand}}</h2>
+                           <h4>{{product.networkPrice | currency}}</h4>
+                           <button class="btn btn-block">View More</button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+      <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+      <script src="node_modules/angular/angular.min.js"></script>
+      <script src="app/app.js"></script>
+   </body>
+</html>

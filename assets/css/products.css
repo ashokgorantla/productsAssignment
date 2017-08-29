@@ -1,0 +1,23 @@
+.mainContainer {
+    color : #333333;
+}
+
+.heroContainer {
+    background-color:white;
+    margin-top: 10px;
+}
+
+.heroContainer-bulletList {
+    list-style: circle;
+    margin-left: 30px;
+}
+
+.productPanel {
+    border: 1px solid rgba(0, 0, 0, 0.13);
+}
+
+ /*utilities*/
+
+.u-marginTop20 {
+    margin-top: 20px;
+}
